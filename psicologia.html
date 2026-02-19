@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Psicológico - Tu Espacio de Cuidado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        }
+        .full-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #3498db;
+        }
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .card {
+            background: linear-gradient(145deg, #f1f8ff, #e3f2fd);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        .card p {
+            margin-bottom: 15px;
+            color: #495057;
+        }
+        .card a, .btn-volver {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .card a:hover, .btn-volver:hover {
+            background-color: #27ae60;
+        }
+        .hidden {
+            display: none;
+        }
+        .exercise-item {
+            margin-bottom: 35px;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 25px;
+        }
+        .exercise-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .exercise-item img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .exercise-item h4 {
+            font-size: 1.3rem;
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+        .exercise-item p {
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        .btn-volver {
+            margin-top: 25px;
+            display: block;
+            text-align: center;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .registro-bg {
+            background: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=1053&q=80') center/cover no-repeat;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            color: white;
+            text-align: center;
+        }
+        .registro-bg h1 {
+            color: white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .registro-bg p {
+            font-size: 1.1rem;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Registro -->
+    <div id="registro-page" class="container">
+        <div class="registro-bg">
+            <h1>Bienvenido a Tu Espacio de Bienestar</h1>
+            <p>Regístrate para acceder a herramientas exclusivas de cuidado psicológico</p>
+        </div>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" placeholder="Escribe tus apellidos" required>
+
+        <label for="telefono">Número de Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="Escribe tu número" required>
+
+        <button onclick="registrarUsuario()">Registrarse</button>
+    </div>
+
+    <!-- Página Principal de Temas -->
+    <div id="temas-page" class="full-container hidden">
+        <h2>Servicios de Bienestar Psicológico</h2>
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Ejercicios para reducir estrés">
+            <h3>1. Ejercicios para Reducir el Estrés</h3>
+            <p>Técnicas prácticas y probadas para manejar el estrés diario y recuperar la calma interior</p>
+            <a href="#ejercicios-estres" onclick="mostrarPagina('ejercicios-estres-page')">Ver Ejercicios</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574634525131-110c0e5c613f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Inteligencia Emocional">
+            <h3>2. Talleres de Inteligencia Emocional</h3>
+            <p>Desarrolla habilidades para entender tus emociones y mejorar tus relaciones con los demás</p>
+            <a href="#talleres-ie" onclick="mostrarPagina('talleres-ie-page')">Ver Talleres</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Hábitos saludables">
+            <h3>3. Hábitos Saludables para la Mente</h3>
+            <p>Consejos y rutinas para cuidar tu salud mental desde tu estilo de vida diario</p>
+            <a href="#habitos-mentales" onclick="mostrarPagina('habitos-mentales-page')">Ver Consejos</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1535378917021-3970a72420cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Videollamada asesoría">
+            <h3>4. Videollamada de Asesoría Personalizada</h3>
+            <p>Agenda una sesión individualizada para resolver tus dudas y recibir acompañamiento</p>
+            <a href="https://wa.me/529622519981" target="_blank">Contactar por WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Página Ejercicios para Reducir Estrés -->
+    <div id="ejercicios-estres-page" class="full-container hidden">
+        <h2>Ejercicios para Reducir el Estrés</h2>
+        
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1585076641399-5c06d1b316c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Respiración 4-7-8">
+            <h4>1. Respiración 4-7-8 (Técnica del Búho)</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Sienta la columna recta, cierra los ojos e inhala por la nariz durante 4 segundos. Retén el aire por 7 segundos y exhala despacio por la boca durante 8 segundos.</p>
+            <p><strong>Duración:</strong> Repetir 6-8 veces consecutivas. Ideal para momentos de alta tensión.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Relajación muscular progresiva">
+            <h4>2. Relajación Muscular Progresiva</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Acuéstese o siéntese cómodo(a). Tensa cada grupo muscular durante 5 segundos y luego relájelo completamente durante 10 segundos. Comience por los pies y suba hasta la cabeza.</p>
+            <p><strong>Duración:</strong> 10-15 minutos. Perfecto para antes de dormir o después de un día intenso.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1541789094913-f3809a8f3ba5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Mindfulness del café">
+            <h4>3. Mindfulness del Café/Té (Ejercicio Sencillo)</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Tome un sorbo de su bebida favorita y concéntrese en su sabor, temperatura, olor y textura. No piense en nada más mientras la consume.</p>
+            <p><strong>Duración:</strong> 3-5 minutos. Puede hacerlo en cualquier momento del día.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Caminata consciente">
+            <h4>4. Caminata Consciente al Aire Libre</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Camine despacio, prestando atención al movimiento de sus pies, al contacto con el suelo, a los sonidos del entorno y las sensaciones del aire en su piel.</p>
+            <p><strong>Duración:</strong> 10-20 minutos. Mejor al amanecer o al atardecer.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Escritura terapéutica">
+            <h4>5. Escritura Terapéutica del Estrés</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Escriba todo lo que le preocupa durante 10 minutos sin preocuparse por la gramática o la forma. Al final, puede quemar el papel o guardarlo como una forma de liberación.</p>
+            <p><strong>Duración:</strong> 10-15 minutos. Ideal para hacer antes de dormir.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Estiramiento de cuello y hombros">
+            <h4>6. Estiramientos de Cuello y Hombros en el Trabajo</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Incline la cabeza hacia cada hombro durante 15 segundos, gire la cabeza suavemente en círculos y eleve los hombros hacia las orejas y luego relájelos.</p>
+            <p><strong>Duración:</strong> 2-3 minutos cada hora si trabaja sentado.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Visualización guiada">
+            <h4>7. Visualización Guiada del Lugar Seguro</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Cierre los ojos e imagine un lugar donde se sienta completamente seguro y tranquilo. Detalle cada aspecto: colores, sonidos, olores y sensaciones. Permanezca en ese lugar mental durante varios minutos
+            </p>
+            <p><strong>Duración:</strong> 5-10 minutos. Ideal para reducir la ansiedad acumulada.</p>
+        </div>
+
+        <a href="#temas" class="btn-volver" onclick="volverAPrincipal()">Volver a Temas</a>
+    </div>
+
+    <!-- Página Talleres de Inteligencia Emocional -->
+    <div id="talleres-ie-page" class="full-container hidden">
+        <h2>Talleres de Inteligencia Emocional</h2>
+        
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1558642084-fd07fae5282e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Diario de emociones">
+            <h4>1. Taller: Diario de Emociones</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Todos los días anota 3 emociones que hayas sentido, cuándo las sentiste y qué las provocó. Agrega una columna sobre cómo las manejaste.</p>
+            <p><strong>Duración:</strong> 5 minutos al día. Hazlo durante 2 semanas para identificar patrones.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Comunicación asertiva">
+            <h4>2. Taller: Comunicación Asertiva</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Practica frases como "Yo siento... porque...", "Necesito que...", en lugar de críticas o acusaciones. Empieza con situaciones sencillas.</p>
+            <p><strong>Duración:</strong> 15 minutos de práctica diaria. Puede hacerlo con un amigo o en voz alta frente al espejo.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Identificación de emociones">
+            <h4>3. Taller: Identificación de Emociones Complejas</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Más allá de alegría, tristeza o enojo, aprende a reconocer emociones como la empatía, la culpa, la nostalgia o la satisfacción. Usa una lista de emociones como guía.</p>
+            <p><strong>Duración:</strong> 10 minutos al día. Observa tus emociones en diferentes situaciones.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1565060169272-60c3143509ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Control de impulsos">
+            <h4>4. Taller: Control de Impulsos</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Cuando sientas la necesidad de reaccionar de forma impulsiva, cuenta hasta 10 antes de actuar. Pregúntate: "¿Esta reacción me ayudará?"</p>
+            <p><strong>Duración:</strong> Práctica continua. Lleva un registro de los momentos en los que lo aplicas.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1551009175-15bdf9dcb580?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Empatía activa">
+            <h4>5. Taller: Empatía Activa</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Cuando alguien te cuente algo, escucha sin interrumpir y resume lo que entendiste: "Entiendo que te sientas... porque...".</p>
+            <p><strong>Duración:</strong> Aplícalo en todas tus conversaciones. Practica al menos 3 veces al día.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Autoestima">
+            <h4>6. Taller: Fortalecimiento de Autoestima</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Cada mañana anota 3 cosas por las que te sientas agradecido(a) de ti mismo(a). Antes de dormir, anota un logro del día, por pequeño que sea.</p>
+            <p><strong>Duración:</strong> 5 minutos por la mañana y 5 por la noche. Hazlo durante 1 mes.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Resolución de conflictos">
+            <h4>7. Taller: Resolución de Conflictos</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> En lugar de buscar quién tiene la razón, enfócate en encontrar una solución que funcione para ambos. Usa preguntas como: "¿Qué podemos hacer juntos?"</p>
+            <p><strong>Duración:</strong> Aplícalo cuando surjan diferencias. Practica con situaciones menores primero.</p>
+        </div>
+
+        <a href="#temas" class="btn-volver" onclick="volverAPrincipal()">Volver a Temas</a>
+    </div>
+
+    <!-- Página Hábitos Saludables para la Mente -->
+    <div id="habitos-mentales-page" class="full-container hidden">
+        <h2>Hábitos Saludables para la Mente</h2>
+        
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1505603715383-6f1600e1e7d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Rutina de sueño">
+            <h4>1. Hábito: Rutina de Sueño Consistente</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Dórmite y levántate a la misma hora todos los días, incluso los fines de semana. Evita pantallas 1 hora antes de dormir.</p>
+            <p><strong>Beneficio:</strong> Mejora la calidad del sueño y reduce la irritabilidad diaria.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Alimentación mental">
+            <h4>2. Hábito: Alimentación para la Mente</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Incluye alimentos ricos en omega-3 (pescado, nueces), vitaminas del grupo B (huevos, legumbres) y antioxidantes (frutas y verduras de colores).</p>
+            <p><strong>Beneficio:</strong> Mejora la concentración y reduce los síntomas de ansiedad.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Ejercicio físico">
+            <h4>3. Hábito: Ejercicio Físico Regular</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Realiza 30 minutos de actividad física todos los días: caminata, trote, yoga o cualquier actividad que te guste. Inténtalo a la misma hora.</p>
+            <p><strong>Beneficio:</strong> Aumenta la producción de endorfinas (hormonas de la felicidad) y reduce el estrés.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Tiempo sin tecnología">
+            <h4>4. Hábito: Tiempo Sin Tecnología</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Establece un horario diario sin usar celular, computadora o televisión (al menos 1 hora). Usa ese tiempo para leer, salir al aire libre o hacer un hobby.</p>
+            <p><strong>Beneficio:</strong> Reduce la fatiga visual y la sobreestimulación mental.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Hobbies creativos">
+            <h4>5. Hábito: Practicar un Hobby Creativo</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Dedica al menos 30 minutos al día a algo que te guste: dibujar, cocinar, tocar un instrumento, jardinería o cualquier actividad creativa.</p>
+            <p><strong>Beneficio:</strong> Ayuda a desconectar del estrés y fomenta la expresión emocional.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1535378917021-3970a72420cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Conexión social">
+            <h4>6. Hábito: Mantener Conexiones Sociales</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Programa llamadas o encuentros regulares con familiares y amigos. Incluso una breve charla puede marcar la diferencia.</p>
+            <p><strong>Beneficio:</strong> Reduce el sentimiento de soledad y fortalece el sistema de apoyo emocional.</p>
+        </div>
+
+        <div class="exercise-item">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Gratitud">
+            <h4>7. Hábito: Práctica de la Gratitud</h4>
+            <p><strong>¿Cómo hacerlo?:</strong> Cada noche anota 3 cosas por las que te sientas agradecido(a) del día. Pueden ser cosas pequeñas como un buen café o un sol cálido.</p>
+            <p><strong>Beneficio:</strong> Mejora el estado de ánimo y ayuda a enfocarse en aspectos positivos de la vida.</p>
+        </div>
+
+        <a href="#temas" class="btn-volver" onclick="volverAPrincipal()">Volver a Temas</a>
+    </div>
+
+    <!-- Scripts de Funcionamiento -->
+    <script>
+        // Función para registrar usuario y pasar a la página principal
+        function registrarUsuario() {
+            const nombre = document.getElementById('nombre').value;
+            const apellidos = document.getElementById('apellidos').value;
+            const telefono = document.getElementById('telefono').value;
+
+            if(nombre && apellidos && telefono) {
+                alert(`¡Bienvenido ${nombre} ${apellidos}! Te has registrado correctamente.`);
+                document.getElementById('registro-page').classList.add('hidden');
+                document.getElementById('temas-page').classList.remove('hidden');
+            } else {
+                alert('Por favor completa todos los campos');
+            }
+        }
+
+        // Función para mostrar la página seleccionada
+        function mostrarPagina(paginaId) {
+            // Ocultar todas las páginas
+            document.getElementById('temas-page').classList.add('hidden');
+            document.getElementById('ejercicios-estres-page').classList.add('hidden');
+            document.getElementById('talleres-ie-page').classList.add('hidden');
+            document.getElementById('habitos-mentales-page').classList.add('hidden');
+            
+            // Mostrar la página solicitada
+            document.getElementById(paginaId).classList.remove('hidden');
+        }
+
+        // Función para volver a la página principal de temas
+        function volverAPrincipal() {
+            // Ocultar todas las páginas
+            document.getElementById('ejercicios-estres-page').classList.add('hidden');
+            document.getElementById('talleres-ie-page').classList.add('hidden');
+            document.getElementById('habitos-mentales-page').classList.add('hidden');
+            
+            // Mostrar página principal
+            document.getElementById('temas-page').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
